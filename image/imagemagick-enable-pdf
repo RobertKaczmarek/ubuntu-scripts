@@ -13,11 +13,11 @@ CONF_FILE="/etc/ImageMagick-6/policy.xml"
 if [ -f "${CONF_FILE}" ]
 then
   # remove culprit lines
-  sudo sed -i '/disable ghostscript format types/d' "${CONF_FILE}"
-  sudo sed -i '/\"PS\"/d' "${CONF_FILE}"
-  sudo sed -i '/\"EPS\"/d' "${CONF_FILE}"
-  sudo sed -i '/\"PDF\"/d' "${CONF_FILE}"
-  sudo sed -i '/\"XPS\"/d' "${CONF_FILE}"
+  sed -i '/disable ghostscript format types/d' "${CONF_FILE}"
+  sed -i '/\"PS\"/d' "${CONF_FILE}"
+  sed -i '/\"EPS\"/d' "${CONF_FILE}"
+  sed -i '/\"PDF\"/d' "${CONF_FILE}"
+  sed -i '/\"XPS\"/d' "${CONF_FILE}"
 
   # log and display
   logger "ImageMagick PDF and PostScript restriction removal"
